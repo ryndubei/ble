@@ -6,4 +6,6 @@
 TESTREPORT
 .#*
 cabal.project.local
+.direnv/
+.envrc
 
