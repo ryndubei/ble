@@ -15,7 +15,7 @@ maintainer:     jkarni@turingjump.com
 copyright:      2016 Julian K. Arni
 license:        BSD3
 license-file:   LICENSE
-tested-with:    GHC == 7.10.3, GHC == 8.0.1
+tested-with:    GHC == 8.10.7
 build-type:     Simple
 
 extra-source-files:
