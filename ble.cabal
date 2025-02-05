@@ -103,10 +103,6 @@ executable auth
     , ble
   if flag(hasDBus)
     cpp-options: -DDBusMock
-  other-modules:
-      HeartRate
-      HeartRateClient
-      README
   default-language: Haskell2010
 
 executable hrs
@@ -134,10 +130,6 @@ executable hrs
     , optparse-applicative
   if flag(hasDBus)
     cpp-options: -DDBusMock
-  other-modules:
-      Auth
-      HeartRateClient
-      README
   default-language: Haskell2010
 
 executable hrs-client
@@ -163,41 +155,6 @@ executable hrs-client
     , ble
   if flag(hasDBus)
     cpp-options: -DDBusMock
-  other-modules:
-      Auth
-      HeartRate
-      README
-  default-language: Haskell2010
-
-executable readme
-  main-is: README.lhs
-  hs-source-dirs:
-      examples
-  default-extensions: AutoDeriveTypeable ConstraintKinds DataKinds DefaultSignatures DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable FlexibleContexts FlexibleInstances FunctionalDependencies GADTs KindSignatures MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables TypeFamilies TypeOperators
-  ghc-options: -Wall -pgmL markdown-unlit
-  build-depends:
-      base ^>= 4.12 || ^>= 4.14
-    , bytestring
-    , text
-    , d-bus
-    , uuid
-    , mtl
-    , transformers
-    , containers
-    , random
-    , microlens
-    , microlens-ghc
-    , cereal
-    , data-default-class
-    , ble
-    , stm
-    , markdown-unlit
-  if flag(hasDBus)
-    cpp-options: -DDBusMock
-  other-modules:
-      Auth
-      HeartRate
-      HeartRateClient
   default-language: Haskell2010
 
 test-suite spec
@@ -207,11 +164,14 @@ test-suite spec
       test
   default-extensions: AutoDeriveTypeable ConstraintKinds DataKinds DefaultSignatures DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable FlexibleContexts FlexibleInstances FunctionalDependencies GADTs KindSignatures MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables TypeFamilies TypeOperators
   ghc-options: -Wall
+  build-tool-depends:
+    hspec-discover:hspec-discover
   build-depends:
       base ^>= 4.12 || ^>= 4.14
     , bytestring
     , text
     , d-bus
+    , doctest
     , uuid
     , mtl
     , transformers
@@ -227,6 +187,8 @@ test-suite spec
     , quickcheck-instances
     , process
     , hslogger
+    , yaml
+    , Glob
   if flag(hasDBus)
     cpp-options: -DDBusMock
   other-modules:
