@@ -7,6 +7,8 @@
       inherit self nixpkgs;
       name = "ble-libraries";
       shell = { pkgs, ... }:
-        pkgs.mkShell { buildInputs = with pkgs; [ zlib ]; };
+        pkgs.mkShell {
+          buildInputs = with pkgs; [ zlib haskell.compiler.ghc8107 ];
+        };
     };
 }

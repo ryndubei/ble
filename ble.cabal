@@ -2,6 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 
+cabal-version:  2.0
 name:           ble
 version:        0.4.2
 synopsis:       Bluetooth Low Energy (BLE) peripherals
@@ -16,7 +17,6 @@ license:        BSD3
 license-file:   LICENSE
 tested-with:    GHC == 7.10.3, GHC == 8.0.1
 build-type:     Simple
-cabal-version:  >= 1.10
 
 extra-source-files:
     LICENSE
@@ -52,19 +52,19 @@ library
   default-extensions: AutoDeriveTypeable ConstraintKinds DataKinds DefaultSignatures DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable FlexibleContexts FlexibleInstances FunctionalDependencies GADTs KindSignatures MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables TypeFamilies TypeOperators
   ghc-options: -Wall
   build-depends:
-      base >= 4.8 && < 4.10
-    , bytestring >= 0.10 && < 0.11
-    , text >= 1 && < 2
-    , d-bus >= 0.1.5 && < 0.2
-    , uuid >= 1 && < 2
-    , mtl >= 2.2 && < 2.3
-    , transformers >= 0.4 && < 0.6
-    , containers >= 0.5 && < 0.6
-    , random >= 1 && < 2
-    , microlens >= 0.4 && < 0.5
-    , microlens-ghc >= 0.4 && < 0.5
-    , cereal >= 0.4 && < 0.6
-    , data-default-class >= 0.0 && < 0.2
+      base ^>= 4.12 || ^>= 4.14
+    , bytestring
+    , text
+    , d-bus
+    , uuid
+    , mtl
+    , transformers
+    , containers
+    , random
+    , microlens
+    , microlens-ghc
+    , cereal
+    , data-default-class
   if flag(hasDBus)
     cpp-options: -DDBusMock
   exposed-modules:
@@ -87,19 +87,19 @@ executable auth
   default-extensions: AutoDeriveTypeable ConstraintKinds DataKinds DefaultSignatures DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable FlexibleContexts FlexibleInstances FunctionalDependencies GADTs KindSignatures MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables TypeFamilies TypeOperators
   ghc-options: -Wall
   build-depends:
-      base >= 4.8 && < 4.10
-    , bytestring >= 0.10 && < 0.11
-    , text >= 1 && < 2
-    , d-bus >= 0.1.5 && < 0.2
-    , uuid >= 1 && < 2
-    , mtl >= 2.2 && < 2.3
-    , transformers >= 0.4 && < 0.6
-    , containers >= 0.5 && < 0.6
-    , random >= 1 && < 2
-    , microlens >= 0.4 && < 0.5
-    , microlens-ghc >= 0.4 && < 0.5
-    , cereal >= 0.4 && < 0.6
-    , data-default-class >= 0.0 && < 0.2
+      base ^>= 4.12 || ^>= 4.14
+    , bytestring
+    , text
+    , d-bus
+    , uuid
+    , mtl
+    , transformers
+    , containers
+    , random
+    , microlens
+    , microlens-ghc
+    , cereal
+    , data-default-class
     , ble
   if flag(hasDBus)
     cpp-options: -DDBusMock
@@ -116,22 +116,22 @@ executable hrs
   default-extensions: AutoDeriveTypeable ConstraintKinds DataKinds DefaultSignatures DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable FlexibleContexts FlexibleInstances FunctionalDependencies GADTs KindSignatures MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables TypeFamilies TypeOperators
   ghc-options: -Wall -threaded
   build-depends:
-      base >= 4.8 && < 4.10
-    , bytestring >= 0.10 && < 0.11
-    , text >= 1 && < 2
-    , d-bus >= 0.1.5 && < 0.2
-    , uuid >= 1 && < 2
-    , mtl >= 2.2 && < 2.3
-    , transformers >= 0.4 && < 0.6
-    , containers >= 0.5 && < 0.6
-    , random >= 1 && < 2
-    , microlens >= 0.4 && < 0.5
-    , microlens-ghc >= 0.4 && < 0.5
-    , cereal >= 0.4 && < 0.6
-    , data-default-class >= 0.0 && < 0.2
+      base ^>= 4.12 || ^>= 4.14
+    , bytestring
+    , text 
+    , d-bus
+    , uuid
+    , mtl
+    , transformers
+    , containers
+    , random
+    , microlens
+    , microlens-ghc
+    , cereal
+    , data-default-class
     , ble
     , hslogger
-    , optparse-applicative >= 0.12 && < 0.14
+    , optparse-applicative
   if flag(hasDBus)
     cpp-options: -DDBusMock
   other-modules:
@@ -147,19 +147,19 @@ executable hrs-client
   default-extensions: AutoDeriveTypeable ConstraintKinds DataKinds DefaultSignatures DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable FlexibleContexts FlexibleInstances FunctionalDependencies GADTs KindSignatures MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables TypeFamilies TypeOperators
   ghc-options: -Wall -threaded
   build-depends:
-      base >= 4.8 && < 4.10
-    , bytestring >= 0.10 && < 0.11
-    , text >= 1 && < 2
-    , d-bus >= 0.1.5 && < 0.2
-    , uuid >= 1 && < 2
-    , mtl >= 2.2 && < 2.3
-    , transformers >= 0.4 && < 0.6
-    , containers >= 0.5 && < 0.6
-    , random >= 1 && < 2
-    , microlens >= 0.4 && < 0.5
-    , microlens-ghc >= 0.4 && < 0.5
-    , cereal >= 0.4 && < 0.6
-    , data-default-class >= 0.0 && < 0.2
+      base ^>= 4.12 || ^>= 4.14
+    , bytestring
+    , text
+    , d-bus
+    , uuid
+    , mtl
+    , transformers
+    , containers
+    , random
+    , microlens
+    , microlens-ghc
+    , cereal
+    , data-default-class
     , ble
   if flag(hasDBus)
     cpp-options: -DDBusMock
@@ -176,19 +176,19 @@ executable readme
   default-extensions: AutoDeriveTypeable ConstraintKinds DataKinds DefaultSignatures DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable FlexibleContexts FlexibleInstances FunctionalDependencies GADTs KindSignatures MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables TypeFamilies TypeOperators
   ghc-options: -Wall -pgmL markdown-unlit
   build-depends:
-      base >= 4.8 && < 4.10
-    , bytestring >= 0.10 && < 0.11
-    , text >= 1 && < 2
-    , d-bus >= 0.1.5 && < 0.2
-    , uuid >= 1 && < 2
-    , mtl >= 2.2 && < 2.3
-    , transformers >= 0.4 && < 0.6
-    , containers >= 0.5 && < 0.6
-    , random >= 1 && < 2
-    , microlens >= 0.4 && < 0.5
-    , microlens-ghc >= 0.4 && < 0.5
-    , cereal >= 0.4 && < 0.6
-    , data-default-class >= 0.0 && < 0.2
+      base ^>= 4.12 || ^>= 4.14
+    , bytestring
+    , text
+    , d-bus
+    , uuid
+    , mtl
+    , transformers
+    , containers
+    , random
+    , microlens
+    , microlens-ghc
+    , cereal
+    , data-default-class
     , ble
     , stm
     , markdown-unlit
@@ -208,24 +208,24 @@ test-suite spec
   default-extensions: AutoDeriveTypeable ConstraintKinds DataKinds DefaultSignatures DeriveFoldable DeriveFunctor DeriveGeneric DeriveTraversable FlexibleContexts FlexibleInstances FunctionalDependencies GADTs KindSignatures MultiParamTypeClasses OverloadedStrings RankNTypes ScopedTypeVariables TypeFamilies TypeOperators
   ghc-options: -Wall
   build-depends:
-      base >= 4.8 && < 4.10
-    , bytestring >= 0.10 && < 0.11
-    , text >= 1 && < 2
-    , d-bus >= 0.1.5 && < 0.2
-    , uuid >= 1 && < 2
-    , mtl >= 2.2 && < 2.3
-    , transformers >= 0.4 && < 0.6
-    , containers >= 0.5 && < 0.6
-    , random >= 1 && < 2
-    , microlens >= 0.4 && < 0.5
-    , microlens-ghc >= 0.4 && < 0.5
-    , cereal >= 0.4 && < 0.6
-    , data-default-class >= 0.0 && < 0.2
+      base ^>= 4.12 || ^>= 4.14
+    , bytestring
+    , text
+    , d-bus
+    , uuid
+    , mtl
+    , transformers
+    , containers
+    , random
+    , microlens
+    , microlens-ghc
+    , cereal
+    , data-default-class
     , ble
-    , hspec > 2 && < 3
-    , QuickCheck >= 2.8 && < 2.10
-    , quickcheck-instances >= 0.3 && < 0.4
-    , process >= 1.2 && < 1.5
+    , hspec
+    , QuickCheck
+    , quickcheck-instances
+    , process
     , hslogger
   if flag(hasDBus)
     cpp-options: -DDBusMock
